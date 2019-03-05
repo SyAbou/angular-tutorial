@@ -2,19 +2,25 @@
     <div class="tweet-header">
       <strong>{{ tweet.user }}</strong>
       <small class="time">{{ tweet.created_at | timeAgo }}</small>
-      
     </div>
     <div class="tweet-content">
       {{ tweet.text }}
-      
-    </div><br>
-    <div _ngcontent-c1 class="favorite">
-    <i  _ngcontent-c1 class="far fa-heart"></i>
+    </div>
+    <div class="favorite">
+      <i class="button fa-heart" [ngClass]="{
+        'fas': tweet.isLiked,
+        'far': !tweet.isLiked
+      }"
+      (click)="likeTweet(tweet.id)"></i>
+      <span *ngIf="tweet.favoriteCount != null">{{ tweet.favoriteCount }}</span>
+    </div>
   </div>
-    
-  </div><br>
-  <label>
-      <textarea #ntext></textarea>{{ntext.value}}<br>
-    </label><br>
-    
-    <button (click)="onSave(ntext.value)">tweeter</button><br>
+  
+  <div class="create-tweet-container">
+    <div class="tweet-content">
+      <textarea cols="50" rows="5" #tweetContent></textarea>
+    </div>
+    <div class="footer">
+      <button class="send-tweet-button" (click)="onSave(tweetContent.value)">Tweeter</button>
+    </div>
+  </div>
