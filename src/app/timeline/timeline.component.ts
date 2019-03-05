@@ -21,6 +21,7 @@ export class TimelineComponent implements OnInit {
       user: 'Bob kelso'
     },
   ];
+  
 
   constructor() { }
 
