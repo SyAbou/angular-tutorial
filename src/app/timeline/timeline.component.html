@@ -6,6 +6,13 @@
     </div>
     <div class="tweet-content">
       {{ tweet.text }}
-      {{tweet.textarea}}
-    </div>
-  </div>
+      
+    </div><br>
+    <i class="far fa-heart"></i>
+    
+  </div><br>
+  <label>
+      <textarea #ntext></textarea>{{ntext.value}}<br>
+    </label><br>
+    
+    <button (click)="onSave(ntext.value)">tweeter</button><br>
