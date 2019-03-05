@@ -12,23 +12,31 @@ export class TimelineComponent implements OnInit {
       created_at: 'Wed Apr 05 12:30:12 +0000 2017',
       id: 1,
       text: 'Je mets les pieds où je veux, Little John… et c\'est souvent dans la gueule.',
-      user: 'James Braddock',
-      favoriteCount:2
-
+      user: 'James Braddock'
     },
     {
       created_at: 'Thu Apr 06 15:24:15 +0000 2017',
       id: 2,
       text: 'Qui a deux pouces et qui s\'en fout ? Bob Kelso !',
       user: 'Bob kelso'
-      
     },
   ];
-  
+
+  user: string = 'abou';
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSave(text: string) {
+    const tweet: Tweet = {
+      created_at: new Date().toISOString(),
+      id: this.tweets.length + 1,
+      text,
+      user: this.user
+    }
+    this.tweets.push(tweet);
   }
 
 }
