@@ -18,11 +18,12 @@ export class TimelineComponent implements OnInit {
       created_at: 'Thu Apr 06 15:24:15 +0000 2017',
       id: 2,
       text: 'Qui a deux pouces et qui s\'en fout ? Bob Kelso !',
-      user: 'Bob kelso'
+      user: 'Bob kelso',
+      favoriteCount: 2
     },
   ];
 
-  user: string = 'abou';
+  private user;
 
   constructor() { }
 
@@ -37,16 +38,5 @@ export class TimelineComponent implements OnInit {
       user: this.user
     }
     this.tweets.push(tweet);
-  }
-  likeTweet(id) {
-    const tweetIndex = this.tweets.findIndex(tweet => tweet.id === id);
-    const tweet = this.tweets[tweetIndex];
-    if(!tweet.isLiked) {
-      tweet.favoriteCount ? tweet.favoriteCount++ : tweet.favoriteCount = 1;
-      tweet.isLiked = true;
-    } else {
-      tweet.favoriteCount--;
-      tweet.isLiked = false;
-    }
   }
 }
