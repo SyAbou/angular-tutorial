@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {Tweet} from './tweet';
 
 @Injectable({
   providedIn: 'root'
