@@ -17,7 +17,7 @@
         class="send-tweet-button"
         [class.disabled]="!user"
         [disabled]="!user"
-        (click)="addTweet(tweetContent.value)"
+        (click)="onSave(tweetContent.value)"
       >Tweeter</button>
     </div>
   </div>
