@@ -9,7 +9,8 @@ import { Tweet } from '../tweet';
 })
 export class TweetComponent implements OnInit {
 
-  @Input() tweet: Tweet;
+  @Input() 
+  tweet: Tweet;
 
   constructor() { }
 

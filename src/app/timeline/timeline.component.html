@@ -1,5 +1,6 @@
 
-  <app-user-box [user-box]="user-box"></app-user-box>
+  <app-user-box [user]="user.name"></app-user-box>
+
   <div *ngFor="let tweet of tweets" class="tweet-container">
     <app-tweet [tweet]="tweet"></app-tweet>
     

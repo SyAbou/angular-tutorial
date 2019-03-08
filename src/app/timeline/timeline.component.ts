@@ -39,7 +39,7 @@ user : User = {};
       id: this.tweets.length + 1,
       text,
       user: this.user.name
-    }
+    };
     this.tweets.push(tweet);
   }
 }
