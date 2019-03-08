@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Directive, Input, ViewChild } from '@angular/core';
 import { Tweet } from '../tweet';
+import {User} from '../user';
+import {UserBoxComponent} from '../user-box/user-box.component';
 
 @Component({
   selector: 'app-timeline',
@@ -7,6 +9,8 @@ import { Tweet } from '../tweet';
   styleUrls: ['./timeline.component.less']
 })
 export class TimelineComponent implements OnInit {
+  @ViewChild(UserBoxComponent)
+user : User = {};
   tweets: Tweet[] = [
      {
       created_at: 'Wed Apr 05 12:30:12 +0000 2017',
@@ -23,8 +27,7 @@ export class TimelineComponent implements OnInit {
     },
   ];
 
-  private user;
-
+ 
   constructor() { }
 
   ngOnInit() {
@@ -35,7 +38,7 @@ export class TimelineComponent implements OnInit {
       created_at: new Date().toISOString(),
       id: this.tweets.length + 1,
       text,
-      user: this.user
+      user: this.user.name
     }
     this.tweets.push(tweet);
   }
